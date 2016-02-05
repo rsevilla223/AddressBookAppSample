@@ -9,12 +9,12 @@ public class Contact {
     private String home_number;
     private String mobile_number;
     private String work_number;
-    private int birthdate;
+    private String birthdate;
     private int employeeId;
 
 
     public Contact(String name, String company,
-                   int birthdate, int EmployeeId,
+                   String birthdate, int EmployeeId,
                    String home_number, String mobile_number,
                    String work_number ) {
         super();
@@ -47,7 +47,7 @@ public class Contact {
         return work_number;
     }
 
-    public int getBirthdate(){
+    public String getBirthdate(){
         return birthdate;
     }
 
