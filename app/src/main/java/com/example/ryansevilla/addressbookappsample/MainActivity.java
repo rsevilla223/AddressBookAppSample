@@ -1,5 +1,6 @@
 package com.example.ryansevilla.addressbookappsample;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -71,8 +72,10 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View viewClicked,
                                     int position, long id) {
                 Contact clickedContact = myContacts.get(position);
-                String message = "You clicked position " + position + " Whose name is " + clickedContact.getName();
-                Toast.makeText(MainActivity.this, message, Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(MainActivity.this, ContactDetailActivity.class);
+                startActivity(intent);
+                //String message = "You clicked position " + position + " Whose name is " + clickedContact.getName();
+                //Toast.makeText(MainActivity.this, message, Toast.LENGTH_LONG).show();
             }
         });
     }
