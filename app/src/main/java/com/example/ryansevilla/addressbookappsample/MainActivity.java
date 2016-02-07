@@ -23,7 +23,10 @@ public class MainActivity extends AppCompatActivity {
 
         populateContactList();
         populateListView();
+        registerClickCallback();
     }
+
+
 
     private void populateContactList(){
         myContacts.add(new Contact("Ryan Sevilla", "Loyola University Chicago",
@@ -61,6 +64,19 @@ public class MainActivity extends AppCompatActivity {
         list.setAdapter(adapter);
     }
 
+    private void registerClickCallback(){
+        ListView list = (ListView) findViewById(R.id.ContactsListView);
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View viewClicked,
+                                    int position, long id) {
+                Contact clickedContact = myContacts.get(position);
+                String message = "You clicked position " + position + " Whose name is " + clickedContact.getName();
+                Toast.makeText(MainActivity.this, message, Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
     private class MyListAdapter extends ArrayAdapter<Contact> {
         public MyListAdapter(){
             super(MainActivity.this, R.layout.item_view, myContacts);
@@ -81,8 +97,18 @@ public class MainActivity extends AppCompatActivity {
             ImageView imageView = (ImageView)itemView.findViewById(R.id.item_icon);
             imageView.setImageResource(currentContact.getIconID());
 
+            //Name
+            TextView nameText = (TextView) itemView.findViewById(R.id.item_Name);
+            nameText.setText(currentContact.getName());
+
+            //number
+            TextView numberText = (TextView) itemView.findViewById(R.id.item_Number);
+            numberText.setText(currentContact.getMobile_number());
+
             return itemView;
         }
+
+
 
     }
 }
