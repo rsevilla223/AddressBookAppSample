@@ -20,13 +20,39 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         populateContactList();
         populateListView();
     }
 
     private void populateContactList(){
         myContacts.add(new Contact("Ryan Sevilla", "Loyola University Chicago",
-                "041395", 324, "8478189362", "2242344454", "2245432343"));
+                "041395", 324, R.drawable.contact_icon, "8478189362", "2242344454", "2245432343"));
+        myContacts.add(new Contact("Ryan Sevilla", "Loyola University Chicago",
+                "041395", 324, R.drawable.contact_icon, "8478189362", "2242344454", "2245432343"));
+        myContacts.add(new Contact("Ryan Sevilla", "Loyola University Chicago",
+                "041395", 324, R.drawable.contact_icon, "8478189362", "2242344454", "2245432343"));
+        myContacts.add(new Contact("Ryan Sevilla", "Loyola University Chicago",
+                "041395", 324, R.drawable.contact_icon, "8478189362", "2242344454", "2245432343"));
+        myContacts.add(new Contact("Ryan Sevilla", "Loyola University Chicago",
+                "041395", 324, R.drawable.contact_icon, "8478189362", "2242344454", "2245432343"));
+        myContacts.add(new Contact("Ryan Sevilla", "Loyola University Chicago",
+                "041395", 324, R.drawable.contact_icon, "8478189362", "2242344454", "2245432343"));
+        myContacts.add(new Contact("Ryan Sevilla", "Loyola University Chicago",
+                "041395", 324, R.drawable.contact_icon, "8478189362", "2242344454", "2245432343"));
+        myContacts.add(new Contact("Ryan Sevilla", "Loyola University Chicago",
+                "041395", 324, R.drawable.contact_icon, "8478189362", "2242344454", "2245432343"));
+        myContacts.add(new Contact("Ryan Sevilla", "Loyola University Chicago",
+                "041395", 324, R.drawable.contact_icon, "8478189362", "2242344454", "2245432343"));
+        myContacts.add(new Contact("Ryan Sevilla", "Loyola University Chicago",
+                "041395", 324, R.drawable.contact_icon, "8478189362", "2242344454", "2245432343"));
+        myContacts.add(new Contact("Ryan Sevilla", "Loyola University Chicago",
+                "041395", 324, R.drawable.contact_icon, "8478189362", "2242344454", "2245432343"));
+        myContacts.add(new Contact("Ryan Sevilla", "Loyola University Chicago",
+                "041395", 324, R.drawable.contact_icon, "8478189362", "2242344454", "2245432343"));
+        myContacts.add(new Contact("Ryan Sevilla", "Loyola University Chicago",
+                "041395", 324, R.drawable.contact_icon, "8478189362", "2242344454", "2245432343"));
+
     }
 
     private void populateListView(){
@@ -38,6 +64,24 @@ public class MainActivity extends AppCompatActivity {
     private class MyListAdapter extends ArrayAdapter<Contact> {
         public MyListAdapter(){
             super(MainActivity.this, R.layout.item_view, myContacts);
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            //Checks to make sure there is a view to work with.
+            View itemView = convertView;
+            if (itemView == null){
+                itemView = getLayoutInflater().inflate(R.layout.item_view, parent, false);
+        }
+
+            //Find the current contact to work with
+            Contact currentContact = myContacts.get(position);
+
+            //Fill the view
+            ImageView imageView = (ImageView)itemView.findViewById(R.id.item_icon);
+            imageView.setImageResource(currentContact.getIconID());
+
+            return itemView;
         }
 
     }

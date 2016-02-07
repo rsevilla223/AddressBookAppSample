@@ -11,10 +11,11 @@ public class Contact {
     private String work_number;
     private String birthdate;
     private int employeeId;
+    private int iconID;
 
 
     public Contact(String name, String company,
-                   String birthdate, int EmployeeId,
+                   String birthdate, int employeeId, int iconID,
                    String home_number, String mobile_number,
                    String work_number ) {
         super();
@@ -25,6 +26,7 @@ public class Contact {
         this.home_number = home_number;
         this.mobile_number = mobile_number;
         this.work_number = work_number;
+        this.iconID = iconID;
     }
 
     public String getName(){
@@ -53,5 +55,9 @@ public class Contact {
 
     public int getEmployeeId(){
         return employeeId;
+    }
+
+    public int getIconID(){
+        return iconID;
     }
 }
