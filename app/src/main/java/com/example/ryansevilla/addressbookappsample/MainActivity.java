@@ -1,26 +1,59 @@
 package com.example.ryansevilla.addressbookappsample;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import java.util.ArrayList;
-import java.util.List;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.ImageView;
-import android.widget.AdapterView;
-import android.view.ViewGroup;
-import android.view.View;
+
+import org.json.JSONArray;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+//import info.androidhive.jsonparsing.R;
 
 public class MainActivity extends AppCompatActivity {
+
+    //private ProgressDialog pDialog;
+
+    // URL to get contacts JSON
+    private static String url = "https://solstice.applauncher.com/external/contacts.json";
+
+    // JSON Node names
+
+    private static final String TAG_NAME = "name";
+    private static final String TAG_EMPLOYEE_ID = "employeeId";
+    private static final String TAG_COMPANY = "company";
+    private static final String TAG_DETAILS_URL = "detailsURL";
+    private static final String TAG_SMALLIMAGE_URL = "smallImageURL";
+    private static final String TAG_BIRTHDATE = "birthdate";
+    private static final String TAG_PHONE = "phone";
+    private static final String TAG_PHONE_WORK = "work";
+    private static final String TAG_PHONE_HOME = "home";
+    private static final String TAG_PHONE_MOBILE = "mobile";
+
+    // contacts JSONArray
+    JSONArray contacts = null;
+
+    // Hashmap for ListView
+    ArrayList<HashMap<String, String>> contactList;
+
     private List<Contact> myContacts = new ArrayList<Contact>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        contactList = new ArrayList<HashMap<String, String>>();
+        //ListView lv = (ListView);
 
         populateContactList();
         populateListView();
@@ -32,29 +65,13 @@ public class MainActivity extends AppCompatActivity {
     private void populateContactList(){
         myContacts.add(new Contact("Ryan Sevilla", "Loyola University Chicago",
                 "041395", 324, R.drawable.contact_icon, "8478189362", "2242344454", "2245432343"));
-        myContacts.add(new Contact("Ryan Sevilla", "Loyola University Chicago",
+        myContacts.add(new Contact("Essie Vaill", "Litronic Industries",
                 "041395", 324, R.drawable.contact_icon, "8478189362", "2242344454", "2245432343"));
-        myContacts.add(new Contact("Ryan Sevilla", "Loyola University Chicago",
+        myContacts.add(new Contact("Cruz Roudabush", "Metropolitan Elevator Co",
                 "041395", 324, R.drawable.contact_icon, "8478189362", "2242344454", "2245432343"));
-        myContacts.add(new Contact("Ryan Sevilla", "Loyola University Chicago",
+        myContacts.add(new Contact("Billie Tinnes", "Meridian Products",
                 "041395", 324, R.drawable.contact_icon, "8478189362", "2242344454", "2245432343"));
-        myContacts.add(new Contact("Ryan Sevilla", "Loyola University Chicago",
-                "041395", 324, R.drawable.contact_icon, "8478189362", "2242344454", "2245432343"));
-        myContacts.add(new Contact("Ryan Sevilla", "Loyola University Chicago",
-                "041395", 324, R.drawable.contact_icon, "8478189362", "2242344454", "2245432343"));
-        myContacts.add(new Contact("Ryan Sevilla", "Loyola University Chicago",
-                "041395", 324, R.drawable.contact_icon, "8478189362", "2242344454", "2245432343"));
-        myContacts.add(new Contact("Ryan Sevilla", "Loyola University Chicago",
-                "041395", 324, R.drawable.contact_icon, "8478189362", "2242344454", "2245432343"));
-        myContacts.add(new Contact("Ryan Sevilla", "Loyola University Chicago",
-                "041395", 324, R.drawable.contact_icon, "8478189362", "2242344454", "2245432343"));
-        myContacts.add(new Contact("Ryan Sevilla", "Loyola University Chicago",
-                "041395", 324, R.drawable.contact_icon, "8478189362", "2242344454", "2245432343"));
-        myContacts.add(new Contact("Ryan Sevilla", "Loyola University Chicago",
-                "041395", 324, R.drawable.contact_icon, "8478189362", "2242344454", "2245432343"));
-        myContacts.add(new Contact("Ryan Sevilla", "Loyola University Chicago",
-                "041395", 324, R.drawable.contact_icon, "8478189362", "2242344454", "2245432343"));
-        myContacts.add(new Contact("Ryan Sevilla", "Loyola University Chicago",
+        myContacts.add(new Contact("Zackary Mockus", "D & M Plywood Inc",
                 "041395", 324, R.drawable.contact_icon, "8478189362", "2242344454", "2245432343"));
 
     }
