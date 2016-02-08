@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="First Last"
-            android:id="@+id/textView10"
+            android:id="@+id/con_Name"
             android:layout_below="@+id/textView9"
             android:layout_toRightOf="@+id/imageView2"
             android:layout_toEndOf="@+id/imageView2" />
@@ -49,8 +49,8 @@
             android:text="Company:"
             android:id="@+id/textView11"
             android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/textView10"
-            android:layout_toEndOf="@+id/textView10"
+            android:layout_toRightOf="@+id/con_Name"
+            android:layout_toEndOf="@+id/con_Name"
             android:layout_marginLeft="47dp"
             android:layout_marginStart="47dp" />
 
@@ -59,8 +59,8 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Company Name"
-            android:id="@+id/textView12"
-            android:layout_alignTop="@+id/textView10"
+            android:id="@+id/con_Comp"
+            android:layout_alignTop="@+id/con_Name"
             android:layout_alignLeft="@+id/textView11"
             android:layout_alignStart="@+id/textView11" />
 
@@ -80,7 +80,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="(123) 456-7890"
-            android:id="@+id/textView14"
+            android:id="@+id/con_Homephone"
             android:layout_below="@+id/textView13"
             android:layout_alignLeft="@+id/textView13"
             android:layout_alignStart="@+id/textView13" />
@@ -91,16 +91,16 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Mobile Phone:"
             android:id="@+id/textView15"
-            android:layout_below="@+id/textView14"
-            android:layout_alignLeft="@+id/textView14"
-            android:layout_alignStart="@+id/textView14" />
+            android:layout_below="@+id/con_Homephone"
+            android:layout_alignLeft="@+id/con_Homephone"
+            android:layout_alignStart="@+id/con_Homephone" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="(123) 343-8264"
-            android:id="@+id/textView16"
+            android:id="@+id/con_Cellphone"
             android:layout_below="@+id/textView15"
             android:layout_alignLeft="@+id/textView15"
             android:layout_alignStart="@+id/textView15" />
@@ -111,16 +111,16 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Work Phone:"
             android:id="@+id/textView17"
-            android:layout_below="@+id/textView16"
-            android:layout_alignLeft="@+id/textView16"
-            android:layout_alignStart="@+id/textView16" />
+            android:layout_below="@+id/con_Cellphone"
+            android:layout_alignLeft="@+id/con_Cellphone"
+            android:layout_alignStart="@+id/con_Cellphone" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="(634) 778-9847"
-            android:id="@+id/textView18"
+            android:id="@+id/con_workPhone"
             android:layout_below="@+id/textView17"
             android:layout_alignLeft="@+id/textView17"
             android:layout_alignStart="@+id/textView17" />
@@ -132,18 +132,18 @@
             android:text="Address:"
             android:id="@+id/textView19"
             android:layout_alignTop="@+id/textView13"
-            android:layout_alignLeft="@+id/textView12"
-            android:layout_alignStart="@+id/textView12" />
+            android:layout_alignLeft="@+id/con_Comp"
+            android:layout_alignStart="@+id/con_Comp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:id="@+id/textView20"
-            android:layout_alignTop="@+id/textView14"
+            android:id="@+id/con_Address"
+            android:layout_alignTop="@+id/con_Homephone"
             android:layout_alignLeft="@+id/textView19"
             android:layout_alignStart="@+id/textView19"
-            android:layout_above="@+id/textView18"
+            android:layout_above="@+id/con_workPhone"
             android:text="123 Lane Chicago, IL 60626" />
 
         <TextView
@@ -153,16 +153,16 @@
             android:text="Birthday:"
             android:id="@+id/textView21"
             android:layout_marginTop="60dp"
-            android:layout_below="@+id/textView18"
-            android:layout_alignLeft="@+id/textView18"
-            android:layout_alignStart="@+id/textView18" />
+            android:layout_below="@+id/con_workPhone"
+            android:layout_alignLeft="@+id/con_workPhone"
+            android:layout_alignStart="@+id/con_workPhone" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="01/01/1995"
-            android:id="@+id/textView22"
+            android:id="@+id/con_Birthdate"
             android:layout_below="@+id/textView21"
             android:layout_alignLeft="@+id/textView21"
             android:layout_alignStart="@+id/textView21" />
@@ -174,18 +174,38 @@
             android:text="Email:"
             android:id="@+id/textView23"
             android:layout_marginTop="51dp"
-            android:layout_below="@+id/textView22"
-            android:layout_alignLeft="@+id/textView22"
-            android:layout_alignStart="@+id/textView22" />
+            android:layout_below="@+id/con_Birthdate"
+            android:layout_alignLeft="@+id/con_Birthdate"
+            android:layout_alignStart="@+id/con_Birthdate" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="unknown@gmail.com"
-            android:id="@+id/textView24"
+            android:id="@+id/con_email"
             android:layout_below="@+id/textView23"
             android:layout_alignLeft="@+id/textView23"
             android:layout_alignStart="@+id/textView23" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Employee ID:"
+            android:id="@+id/textView10"
+            android:layout_above="@+id/con_Birthdate"
+            android:layout_alignLeft="@+id/con_Address"
+            android:layout_alignStart="@+id/con_Address" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="123456"
+            android:id="@+id/con_Empid"
+            android:layout_below="@+id/textView10"
+            android:layout_alignLeft="@+id/textView10"
+            android:layout_alignStart="@+id/textView10" />
     </RelativeLayout>
 </RelativeLayout>

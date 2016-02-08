@@ -73,6 +73,14 @@ public class MainActivity extends AppCompatActivity {
                                     int position, long id) {
                 Contact clickedContact = myContacts.get(position);
                 Intent intent = new Intent(MainActivity.this, ContactDetailActivity.class);
+                int empnum = clickedContact.getEmployeeId();
+                intent.putExtra("parameter name", clickedContact.getName());
+                intent.putExtra("parameter company", clickedContact.getCompany());
+                intent.putExtra("parameter birthdate", clickedContact.getBirthdate());
+                intent.putExtra("parameter employee", clickedContact.getEmployeeId());
+                intent.putExtra("parameter home_phone", clickedContact.getHome_number());
+                intent.putExtra("parameter mobile_phone", clickedContact.getMobile_number());
+                intent.putExtra("parameter work_phone", clickedContact.getWork_number());
                 startActivity(intent);
                 //String message = "You clicked position " + position + " Whose name is " + clickedContact.getName();
                 //Toast.makeText(MainActivity.this, message, Toast.LENGTH_LONG).show();
